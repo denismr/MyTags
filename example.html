@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mytags.css">
+
+</head>
+
+<body>
+
+  <div class="container">  
+    <form>
+      <div class="form-group">
+        <label>States</label>
+        <div id="target-field"></div>
+      </div>
+    </form>
+
+    <p>
+      <button type="button" class="btn btn-primary">Show selection</button>
+    </p>
+    <p>
+      <div class="alert alert-primary" role="alert">
+        Selection will show up here.
+      </div>
+    </p>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/typeahead.bundle.js"></script>
+  <script src="js/mytags.js"></script>
+  <script>
+    $(document).ready(function() {
+      let data = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
+        'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
+        'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
+        'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
+        'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+        'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
+        'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
+        'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
+        'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+      ];
+
+      let mytags = new MyTags('target-field', "Click here to select items", data);
+      $('button').click(function() {
+        $('.alert').text(mytags.value.join(', '));
+      });
+    });
+  </script>
+</body>
+</html>

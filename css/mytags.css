@@ -1,0 +1,129 @@
+
+.mytags-tag {
+  margin-right: 0.5em;
+  border-radius: 0.5em;
+  background-color: #16c9ff;
+  font-weight: bold;
+  font-size: 10pt;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  display: inline-flex;
+}
+.mytags-tag:hover {
+  background-color: #ff5d5d;
+  cursor: pointer;
+  position: relative;
+}
+
+.mytags-tag:hover::before {
+  position: absolute;
+  right: -0.5em;
+  top: -0.25em;
+  background-color: #ff5d5d;
+  border-radius: 0.5em;
+  width: 1em;
+  height: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.1em;
+  padding-left: 0.05em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 12pt;
+  content: "\00D7";
+}
+
+.mytags-container {
+  position: relative;
+}
+
+.mytags-tagfield {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border:1px solid black;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+.mytags-taglist {
+  flex-grow: 1;
+}
+
+.mytags-taglist:empty {
+  text-align: right;
+  color: #666;
+}
+
+.mytags-taglist:empty::before {
+  font-style: italic;
+  content: attr(data-placeholder);
+  margin-right: 0.5em;
+}
+.mytags-taglist:empty::after {
+  margin-right: 0.5em;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16pt;
+  content: '\2933';
+  font-weight: bolder;
+}
+
+.mytags-icon-btn {
+  cursor: pointer;
+}
+
+.mytags-autocompbox {
+  position: absolute;
+  top:100%;
+  right:0%;
+  padding: 0.5em 0 0.5em 0;
+  border-radius: 0 0 0.5em 0.5em;
+  border: 1px solid black;
+  border-top: 0;
+  background-color: white;
+}
+
+.mytags-autocompbox>input {
+  background-color: #00000000;
+  border:0;
+  margin: 0 0.5em 0 0.5em;
+  font-weight: bold;
+}
+
+.mytags-autocompbox>input::placeholder {
+  font-style: italic;
+  font-weight: normal;
+}
+
+.mytags-autocompbox>input:focus {
+  outline-width: 0;
+}
+
+.mytags-autocompbox>ul{
+  padding: 0;
+  margin:0;
+  left:0;
+  list-style-type: none;
+  max-height: 30em;
+  overflow-y: scroll;
+}
+
+.mytags-autocompbox>ul>li{
+  margin:0;
+  padding:0;
+  text-align:center;
+  width:100%;
+  cursor: pointer;
+}
+
+.mytags-autocompbox>ul>li:hover{
+  background-color: #6adcff;
+}
+
+.mytags-autocompbox>ul>li:hover::before{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  content: "+\00a0";
+}
